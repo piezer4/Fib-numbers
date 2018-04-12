@@ -37,7 +37,7 @@ function FibSequence(size)
     else
       {
         temp = currentnum;
-        currentnum = currentnum + 5;
+        currentnum = currentnum + prevnum;
         prevnum = temp;
       }
     
