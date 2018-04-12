@@ -1,0 +1,63 @@
+var n = 0;
+var currentnum = 0;
+var prevnum = 0;
+var resultstring = "";
+var temp = 0;
+var x;
+var sequence;
+
+function Calc()
+{
+  n = document.getElementById("n").value;
+  document.getElementById("fn").value = "";
+  
+  sequence = FibSequence(n);
+  
+  document.getElementById("fn").value =resultstring;
+
+  alert("Hello");
+  
+}
+
+function FibSequence(size)
+{
+  resultstring = "";
+  
+  for (var i=0;i<size;i+=1)
+  {
+    if(i===0)
+      {
+        prevnum = null;
+       currentnum = 0;
+      
+      }
+    else if (i == 1)
+      {
+        prevnum = 1;
+        currentnum = currentnum + prevnum;
+      }
+    else
+      {
+        temp = currentnum;
+        currentnum = currentnum + prevnum;
+        prevnum = temp;
+      }
+    
+    resultstring = resultstring + currentnum + ",";
+
+  }
+ 
+  return resultstring;
+}
+
+function test() 
+{
+  x = FibSequence(18);
+  if (x != "0,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,"){
+     alert("false");
+  } 
+  
+  else {
+    alert("true");
+  }
+}
